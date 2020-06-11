@@ -7,6 +7,7 @@ categories: [news]
 tags:
   - riskmetric
 banner: 'img/banners/news.png'
+image: 'img/banners/news.png'
 ---
 
 ``` {r setup, include = FALSE}
@@ -69,9 +70,9 @@ For more information, check out the [`riskmetric` vignette](https://pharmar.gith
 
 ``` {r, message=FALSE, warning=FALSE}
 res <- package_tbl %>%
-  assess() %>%
-  score() %>%
-  mutate(risk = summarize_risk(.))
+  pkg_assess() %>%
+  pkg_score() %>%
+  mutate(risk = summarize_scores(.))
 ```
 
 The function `summarize_scores()` serves as an example for how a risk score might be derived. Each organization should decide independently how to weight different assessments. 
@@ -106,15 +107,15 @@ Several other metrics are under active development that can interrogate package 
 In addition to assessing the set of packages used to develop a project, `riskmetric` can also be used to assess a package before you introduce it into your development environment. Here is an example reviewing the number of downloads for the `survminer` package:
 
 ``` {r}
-pkg_ref("survminer") %>%
-  assess_downloads_1yr() %>% 
-  score()
+# pkg_ref("survminer") %>%
+#   assess_downloads_1yr() %>% 
+#   pkg_score()
 ```
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
 pkg_example <- pkg_ref("survminer") 
-pkg_data <- pkg_example %>% assess()
-pkg_score <- pkg_data %>% score()
+pkg_data <- pkg_example %>% pkg_assess()
+pkg_score <- pkg_data %>% pkg_score()
 ```
 
 Finally, this information can be used by a system administrator when evaluating the suitability of a package, or when writing a validation report:
