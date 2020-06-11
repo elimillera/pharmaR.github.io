@@ -7,7 +7,6 @@ categories: [news]
 tags:
   - riskmetric
 banner: 'img/banners/news.png'
-image: 'img/banners/news.png'
 ---
 
 ``` {r setup, include = FALSE}
