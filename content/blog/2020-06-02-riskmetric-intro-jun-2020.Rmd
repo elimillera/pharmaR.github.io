@@ -1,12 +1,11 @@
 ---
-title: Introduction to the R Package `riskmetric`
-author: Juliane Manitz, Douglas Kelkhoff, Eli Miller, and Yilong Zhang
+title: "Introduction to the R Package `riskmetric`"
+author: "Juliane Manitz, Douglas Kelkhoff, Eli Miller, and Yilong Zhang"
 date: '2020-06-09'
 slug: riskmetric-intro-jun-2020
-categories: [news]
-tags:
-  - riskmetric
-banner: 'img/banners/news.png'
+categories: news
+tags: riskmetric
+banner: img/banners/news.png
 ---
 
 ``` {r setup, include = FALSE}
